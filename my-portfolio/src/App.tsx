@@ -1,7 +1,7 @@
 import './App.css';
 import './index.css';
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className={`app-container ${theme}`}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home theme={theme} toggleTheme={toggleTheme} />} />
           <Route element={<Layout theme={theme} toggleTheme={toggleTheme} />}>
@@ -45,7 +45,7 @@ function App() {
           </Route>
         </Routes>
 
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 } 

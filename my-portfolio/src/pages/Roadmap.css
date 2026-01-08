@@ -1,0 +1,244 @@
+.roadmap-bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.layout-container.light .roadmap-bg-layer {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url('/img/UI.jpg');
+  opacity: 0.6;
+}
+
+.layout-container.dark .roadmap-bg-layer {
+  background-image:
+    linear-gradient(rgba(1, 29, 53, 0.6), rgba(1, 29, 53, 0.6)),
+    url('/img/UIScuro.jpg');
+  opacity: 0.4;
+}
+
+.page-container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lab-intro,
+.roadmap-section,
+.learning-section {
+  position: relative;
+  z-index: 2;
+}
+
+.lab-description,
+.roadmap-item,
+.courses-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lab-description {
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roadmap-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title-large {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roadmap-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: 2px solid var(--accent);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.filter-btn:hover {
+  background-color: var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.roadmap-item {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.roadmap-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.roadmap-item h4 {
+  color: var(--accent);
+  margin: 15px 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.roadmap-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.status-dot {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  align-self: flex-start;
+  backdrop-filter: blur(5px);
+}
+
+.status-dot.learning {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: #27ae60;
+  border: 1px solid rgba(46, 204, 113, 0.5);
+}
+
+.status-dot.planned {
+  background-color: rgba(52, 152, 219, 0.15);
+  color: #2980b9;
+  border: 1px solid rgba(52, 152, 219, 0.5);
+}
+
+.learning-section {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.learning-section h3 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.courses-card {
+  padding: 2rem;
+}
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-item {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.course-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.course-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-details strong {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.course-provider {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.course-desc {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .page-title,
+  .section-title-large,
+  .learning-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .lab-description,
+  .courses-card {
+    padding: 1.5rem;
+  }
+}

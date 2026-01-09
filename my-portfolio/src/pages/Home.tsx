@@ -30,16 +30,19 @@ export default function Home({ theme, toggleTheme }: HomeProps) {
                 <Link to="/about" className="nav-card glass-effect">
                     <h2>Dal Tessuto al Codice</h2>
                     <p>Come 10 anni di esperienza nella moda hanno plasmato le mie Soft Skills e il mio approccio al design</p>
+                    <span className="card-cta">Scopri di più →</span>
                 </Link>
 
                 <Link to="/portfolio" className="nav-card glass-effect">
                     <h2>Sviluppo & Competenze</h2>
                     <p>Il percorso in ITS, i progetti su GitHub e le tecnologie che utilizzo per costruire il web</p>
+                    <span className="card-cta">Scopri di più →</span>
                 </Link>
 
                 <Link to="/roadmap" className="nav-card glass-effect">
                     <h2>Obiettivi & Crescita</h2>
                     <p>La mia mappa di crescita: dagli approfondimenti su React e Angular alle prossime sfide UX/UI</p>
+                    <span className="card-cta">Scopri di più →</span>
                 </Link>
             </div>
         </div>

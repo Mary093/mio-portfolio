@@ -49,6 +49,31 @@
   margin-bottom: 20px;
 }
 
+.card-cta {
+  display: block;              
+  margin-top: 1.5rem;         
+  text-align: right;          
+  font-size: 0.9rem;           
+  font-weight: 600;            
+  color: var(--accent);        
+  font-family: var(--font-body);
+  text-transform: uppercase;   
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease; 
+}
+
+.nav-card:hover .card-cta,
+.repo-card:hover .card-cta {
+  transform: translateX(5px); 
+  color: var(--accent);      
+}
+
+@media (max-width: 768px) {
+  .card-cta {
+    font-size: 0.85rem;
+  }
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }

@@ -8,7 +8,7 @@ interface LayoutProps {
 
 export default function Layout({ theme, toggleTheme }: LayoutProps) {
 
-    const getNavLinkClass = ({ isActive }: { isActive: boolean }) => 
+    const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
         isActive ? "nav-link active" : "nav-link";
 
     return (
@@ -16,17 +16,48 @@ export default function Layout({ theme, toggleTheme }: LayoutProps) {
 
             <nav className="navbar">
                 <div className="nav-links">
-                    <NavLink to="/" className={getNavLinkClass} end>Home</NavLink>
-                    <NavLink to="/about" className={getNavLinkClass}>Dal Tessuto al Codice</NavLink>
-                    <NavLink to="/portfolio" className={getNavLinkClass}>Sviluppo & Competenze</NavLink>
-                    <NavLink to="/roadmap" className={getNavLinkClass}>Obettivi & Crescita</NavLink>
+                    <NavLink to="/" className={getNavLinkClass} end><span className="desktop-text">Home</span>
+                        <div className="mobile-content">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69ZM12 3L2 12H5V20H11V14H13V20H19V12H22L12 3Z" />
+                            </svg>
+                            <span>Home</span>
+                        </div></NavLink>
+                    <NavLink to="/about" className={getNavLinkClass}><span className="desktop-text">Dal Tessuto al Codice</span>
+                        <div className="mobile-content">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                            </svg>
+                            <span>Radici</span>
+                        </div>
+                    </NavLink>
+                    <NavLink to="/portfolio" className={getNavLinkClass}><span className="desktop-text">Sviluppo & Competenze</span>
+                        <div className="mobile-content">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                            </svg>
+                            <span>Codice</span>
+                        </div>
+                    </NavLink>
+                    <NavLink to="/roadmap" className={getNavLinkClass}><span className="desktop-text">Obiettivi & Crescita</span>
+                        <div className="mobile-content">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.4,6L14,4H5V21H7V14H12L12.4,16H22V6H14.4M12,6V8H14V6H12Z" />
+                            </svg>
+                            <span>Obiettivi</span>
+                        </div>
+                    </NavLink>
                 </div>
 
-                <button onClick={toggleTheme} className="theme-btn">
+                <button onClick={toggleTheme} className="theme-btn desktop-only">
                     Tema {theme === 'light' ? 'Scuro' : 'Chiaro'}
                 </button>
 
             </nav>
+
+            <button onClick={toggleTheme} className="theme-btn mobile-only">
+                Tema {theme === 'light' ? 'Scuro' : 'Chiaro'}
+            </button>
 
             <main className="content">
                 <Outlet />

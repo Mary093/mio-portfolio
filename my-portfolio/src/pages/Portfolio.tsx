@@ -88,6 +88,7 @@ export default function Portfolio() {
                                         <div className='repo-footer'>
                                             <span className='repo-lang'> {repo.language || "Code"}</span>
                                         </div>
+                                        <span className="card-cta">Vai al codice →</span>
                                     </a>
                                 ))}
                             </div>

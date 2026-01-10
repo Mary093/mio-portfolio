@@ -11,7 +11,11 @@ import Roadmap from "./pages/Roadmap";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  const [theme, setTheme] = useState<'light' | 'dark'> (()=> {
+    const savedTheme = localStorage.getItem('theme');
+    return (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : 'light';
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,13 +24,17 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(()=> {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
   const toggleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
   };
 
   if (loading) {
     return (
-      <div className="loader-container">
+      <div className={`loader-container ${theme}`}>
         <div className="spinner"></div>
           <h2>Caricamento...</h2>
       </div>

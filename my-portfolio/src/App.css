@@ -37,6 +37,7 @@
   align-items: center;
   background-color: rgb(241,237,228);
   color: black;
+  transition: background-color 0.3s ease;
 }
 
 .spinner {
@@ -47,6 +48,16 @@
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
+}
+
+.loader-container.dark {
+  background-color: #011d35; 
+  color: #f0f0f0;
+}
+
+.loader-container.dark .spinner {
+  border: 5px solid rgba(255, 255, 255, 0.1); 
+  border-top: 5px solid #bdaa8c; 
 }
 
 .card-cta {
